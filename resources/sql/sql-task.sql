@@ -61,4 +61,10 @@
 
 --Task 8
 
+-- select *
+-- from flights
+-- where actual_arrival != scheduled_arrival
+
+
+--Task 9
 
