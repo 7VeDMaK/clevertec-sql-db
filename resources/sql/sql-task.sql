@@ -68,3 +68,59 @@
 
 --Task 9
 
+-- select model ->> 'en' as model, aircraft_code, seat_no, fare_conditions
+-- from aircrafts_data
+--          join seats using (aircraft_code)
+-- where model ->> 'ru' = 'Аэробус A321-200'
+--   and fare_conditions != 'Economy'
+-- order by seat_no
+
+--Task 10
+
+-- select airport_code, airport_name ->> 'en' as airport_name, city ->> 'en' as city_name
+-- from airports_data
+-- where city in (select city
+--                from airports_data
+--                group by city
+--                having count(*) > 1)
+
+--Task 11
+
+-- select *
+-- from tickets
+--          join
+--      (select book_ref
+--       from bookings
+--       where total_amount > (select avg(total_amount) from bookings)) bookings
+--      using (book_ref)
+
+--Task 12
+
+-- select *
+-- from flights
+-- where departure_airport in
+--       (select airport_code
+--        from airports_data
+--        where city ->> 'ru' = 'Екатеринбург')
+--   and arrival_airport in
+--       (select airport_code
+--        from airports_data
+--        where city ->> 'ru' = 'Москва')
+--   and status = 'Scheduled'
+-- order by scheduled_departure
+-- limit 1
+
+--Task 13
+
+-- (select *
+--  from bookings
+--  order by total_amount
+--  limit 1)
+-- union
+-- (select *
+--  from bookings
+--  order by total_amount DESC
+--  limit 1)
+
+--Task 14
+
