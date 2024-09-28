@@ -37,3 +37,28 @@
 
 --Task 5
 
+-- select flight_id
+-- from flights
+-- where flight_id not in (select flight_id
+--                         from ticket_flights
+--                         where fare_conditions = 'Business')
+-- order by flight_id
+
+--Task 6
+
+-- select airport_name ->> 'en', city ->> 'en'
+-- from flights
+--          join airports_data on departure_airport = airport_code
+-- where status = 'Delayed'
+
+--Task 7
+
+-- select airport_name ->> 'en', count(*) as amount
+-- from flights
+--          join airports_data on departure_airport = airport_code
+-- group by airport_name
+-- order by amount DESC
+
+--Task 8
+
+
