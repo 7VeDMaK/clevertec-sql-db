@@ -124,3 +124,39 @@
 
 --Task 14
 
+-- create table Customers
+-- (
+--     id        int primary key,
+--     firstName varchar(255) not null,
+--     LastName  varchar(255) not null,
+--     email     varchar(255),
+--     phone     varchar(255)
+-- );
+
+--Task 15
+
+-- create table Orders
+-- (
+--     id         int primary key,
+--     customerId int not null,
+--     quantity   int default 0,
+--     foreign key (customerId) references Customers (id) on delete cascade
+-- );
+
+--Task 16
+
+-- insert into Customers(id, firstName, LastName, email, phone)
+-- values (1, 'a', 'a', 'a@.com', '+375a');
+-- insert into Customers(id, firstName, LastName, email, phone)
+-- values (2432, 'asdadasa', 'asdadasa', 'asdadasa@.com', '+375asdadasa');
+-- insert into Customers(id, firstName, LastName, email, phone)
+-- values (6646, '6646', '6646', '6646@.com', '+6646');
+-- insert into Orders(id, customerId, quantity)
+-- values (1, 1, 3);
+-- insert into Orders(id, customerId, quantity)
+-- values (24, 2432, 9000);
+
+--Task 17
+
+-- drop table Orders;
+-- drop table Customers;
